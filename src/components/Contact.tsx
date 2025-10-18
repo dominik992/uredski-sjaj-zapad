@@ -7,6 +7,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,7 +15,7 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate form
@@ -27,14 +28,20 @@ const Contact = () => {
       return;
     }
 
-    // Show success message
-    toast({
-      title: "Uspješno poslano!",
-      description: "Kontaktirat ćemo vas u najkraćem mogućem roku.",
-    });
+    setIsSubmitting(true);
+    const subject = "Novi upit s weba - Uredski Sjaj Zapad";
+    try {
+      const body = `Ime: ${formData.name}\nEmail: ${formData.email}\nTelefon: ${formData.phone}\n\nPoruka:\n${formData.message}`;
+      const mailto = `mailto:info@uredskisjajzapad.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+      toast({
+        title: "Otvoren email klijent",
+        description: "Pošaljite poruku iz vašeg mail klijenta.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -128,8 +135,8 @@ const Contact = () => {
                 />
               </div>
               
-              <Button type="submit" size="lg" className="w-full">
-                Pošaljite upit
+              <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Slanje..." : "Pošaljite upit"}
               </Button>
             </form>
           </div>

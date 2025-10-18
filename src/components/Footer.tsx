@@ -1,4 +1,5 @@
 import { Building2 } from "lucide-react";
+import Logo from "@/../public/uredski-sjaj-zapad.png";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
           <div className="grid gap-8 md:grid-cols-3">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Building2 className="w-6 h-6 text-primary" />
+                <img src={Logo} alt="Uredski Sjaj Zapad" className="w-6 h-6 object-contain" />
                 <span className="text-lg font-bold text-foreground">Uredski Sjaj Zapad</span>
               </div>
               <p className="text-muted-foreground">

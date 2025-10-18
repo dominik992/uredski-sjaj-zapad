@@ -1,5 +1,6 @@
 import { Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Logo from "@/../public/uredski-sjaj-zapad.png";
 
 const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,7 +12,7 @@ const Navigation = () => {
       <div className="container px-4 py-4 mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Building2 className="w-8 h-8 text-primary" />
+            <img src={Logo} alt="Uredski Sjaj Zapad" className="w-8 h-8 object-contain" />
             <span className="text-xl font-bold text-foreground">Uredski Sjaj Zapad</span>
           </div>
           
