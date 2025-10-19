@@ -71,3 +71,18 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Sitemap and robots.txt
+
+This project generates `dist/sitemap.xml` and ensures `dist/robots.txt` contains a `Sitemap:` reference on each build.
+
+- The sitemap generator (`scripts/generate-sitemap.mjs`) parses `src/App.tsx` and extracts all `<Route path="..." />` declarations via regex. Any route you add there will be included automatically.
+- `scripts/update-robots.mjs` will create a permissive `robots.txt` if one is not already present in `public/`, then append a `Sitemap: /sitemap.xml` line.
+
+Optionally, set your public site URL before building to generate absolute URLs in the sitemap:
+
+```bash
+SITE_URL="https://www.uredskisjajzapad.hr" npm run build
+```
+
+If `SITE_URL` is not provided, it defaults to `https://www.uredskisjajzapad.hr`.
