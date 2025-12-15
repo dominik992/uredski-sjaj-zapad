@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="768" height="768" viewBox="0 0 768 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Colors -->
+  <!-- navy: #0F3B57, light: #67A8C9, grey: #9AA3AE, dark grey: #6E7781 -->
+
+  <!-- Outer ring (no white border) -->
+  <circle cx="384" cy="384" r="300" stroke="#0F3B57" stroke-width="28" fill="none"/>
+
+  <!-- Window frame -->
+  <g transform="translate(250,240)">
+    <!-- Frame -->
+    <rect x="0" y="0" width="180" height="220" rx="4" fill="#0F3B57"/>
+    <!-- Panes -->
+    <rect x="18" y="18" width="66" height="86" fill="#67A8C9"/>
+    <rect x="96" y="18" width="66" height="86" fill="#67A8C9"/>
+    <rect x="18" y="116" width="66" height="86" fill="#67A8C9"/>
+    <rect x="96" y="116" width="66" height="86" fill="#67A8C9"/>
+  </g>
+
+  <!-- Sparkles near window -->
+  <g fill="#67A8C9">
+    <path d="M520 310c10 28 28 46 56 56-28 10-46 28-56 56-10-28-28-46-56-56 28-10 46-28 56-56z"/>
+    <path d="M470 250c7 18 18 29 36 36-18 7-29 18-36 36-7-18-18-29-36-36 18-7 29-18 36-36z"/>
+  </g>
+
+  <!-- Broom -->
+  <g transform="translate(380,480) rotate(-25)">
+    <!-- Handle -->
+    <rect x="0" y="-220" width="22" height="240" rx="11" fill="#0F3B57"/>
+    <!-- Ferrule -->
+    <rect x="-4" y="20" width="30" height="18" rx="4" fill="#9AA3AE"/>
+    <!-- Bristles base -->
+    <path d="M-120 38 H 130 V 120 C 90 150 10 168 -40 160 C -70 156 -100 146 -120 130 Z" fill="#0F3B57"/>
+    <!-- Bristles highlight -->
+    <path d="M-100 120 C -60 140 -10 150 60 150 C 20 170 -40 175 -80 168 C -95 165 -108 158 -120 150 Z" fill="#9AA3AE"/>
+  </g>
+
+  <!-- Clip small gap where handle crosses ring (to mimic original) -->
+  <mask id="ringGap">
+    <rect width="100%" height="100%" fill="white"/>
+    <g transform="translate(380,480) rotate(-25)">
+      <rect x="-10" y="-230" width="42" height="120" rx="20" fill="black"/>
+    </g>
+  </mask>
+  <circle cx="384" cy="384" r="300" stroke="#0F3B57" stroke-width="28" fill="none" mask="url(#ringGap)"/>
+
+</svg>
+
+
