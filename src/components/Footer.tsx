@@ -31,7 +31,7 @@ const Footer = () => {
               <h3 className="mb-4 text-lg font-semibold text-foreground">Kontakt</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>+385 91 526 5248</li>
-                <li>info@uredskisjajzapad.com</li>
+                <li>uredskisjajzapad@gmail.com</li>
                 <li>Pon-Pet: 06:00 - 22:00</li>
               </ul>
             </div>

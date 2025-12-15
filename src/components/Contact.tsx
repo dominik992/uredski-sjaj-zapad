@@ -32,7 +32,7 @@ const Contact = () => {
     const subject = "Novi upit s weba - Uredski Sjaj Zapad";
     try {
       const body = `Ime: ${formData.name}\nEmail: ${formData.email}\nTelefon: ${formData.phone}\n\nPoruka:\n${formData.message}`;
-      const mailto = `mailto:info@uredskisjajzapad.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailto = `mailto:uredskisjajzapad@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
 
       toast({
@@ -74,7 +74,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h3 className="mb-2 text-lg font-semibold text-card-foreground">Email</h3>
-                    <p className="text-muted-foreground">info@uredskisjajzapad.com</p>
+                    <p className="text-muted-foreground">uredskisjajzapad@gmail.com</p>
                   </div>
                 </div>
               </div>
